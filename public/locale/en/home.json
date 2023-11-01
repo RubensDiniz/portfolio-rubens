@@ -1,0 +1,15 @@
+{
+  "Home": {
+    "position": "Front-end Developer",
+    "about": {
+      "button": "About",
+      "texts": {
+        "1": "Hi! I’m Rubens, a <bold>front-end developer</bold> passionate about building outstanding software experiences, learning and honing my skills.",
+        "2": "I graduated in Computer Science at the end of 2021, and since then I have been working as a developer."
+      },
+      "languages": "\uD83C\uDF0E C1 English | Native Portuguese"
+    },
+    "br_flag": "Switch to Portuguese",
+    "us_flag": "Switch to English"
+  }
+}
