@@ -1,0 +1,15 @@
+{
+  "Home": {
+    "position": "Desenvolvedor Front-end",
+    "about": {
+      "button": "Sobre",
+      "texts": {
+        "1": "Olá! Sou o Rubens, um <bold>dev front-end</bold> apaixonado por criar incríveis experiências de software, aprender e aprimorar minhas habilidades.",
+        "2": "Me formei em Ciências da Computação no final de 2021 e desde então tenho trabalhado como desenvolvedor."
+      },
+      "languages": "\uD83C\uDF0E Inglês C1 | Português Nativo"
+    },
+    "br_flag": "Trocar para português",
+    "us_flag": "Trocar para inglês"
+  }
+}
