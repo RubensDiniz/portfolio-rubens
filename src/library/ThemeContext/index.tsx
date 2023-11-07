@@ -1,12 +1,12 @@
 import { createContext, useContext } from 'react'
 
 export type ThemeContextProps = {
-  usingDarkTheme: boolean
+  userTheme: string
   toggleTheme: () => void
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({
-  usingDarkTheme: false,
+  userTheme: 'dark',
   toggleTheme: () => undefined
 })
 
