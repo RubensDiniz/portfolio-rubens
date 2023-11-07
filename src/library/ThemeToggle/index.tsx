@@ -1,15 +1,22 @@
 'use client'
 import { IconFlipper, MoonIcon, SunIcon, ToggleButton } from './styles'
-import { useThemeContext } from '@/library/ThemeContext'
+import { useTheme } from 'next-themes'
 import moon from '$/public/moon.svg'
 import sun from '$/public/sun.svg'
+import { useEffect, useState } from 'react'
 
 export const ThemeToggle = () => {
-  const { userTheme, toggleTheme } = useThemeContext()
+  const { theme, setTheme } = useTheme()
+
+  const [currentTheme, setCurrentTheme] = useState<string | undefined>(undefined)
+
+  useEffect(() => {
+    setCurrentTheme(theme)
+  }, [theme])
 
   return (
-    <ToggleButton onClick={toggleTheme}>
-      <IconFlipper isDark={userTheme ? userTheme === 'dark' : false}>
+    <ToggleButton onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      <IconFlipper currentTheme={currentTheme}>
         <SunIcon src={sun} alt={'☀️'} />
         <MoonIcon src={moon} alt={'🌙'} />
       </IconFlipper>

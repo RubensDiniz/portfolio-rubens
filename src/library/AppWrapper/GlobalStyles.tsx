@@ -1,17 +1,29 @@
-import { css, Global, useTheme } from '@emotion/react'
+import { css, Global } from '@emotion/react'
 import { useEffect, useState } from 'react'
 
 const GlobalStyles = () => {
-  const theme = useTheme()
-
-  const [hasLoaded, setHasLoaded] = useState(false)
+  const [hasMounted, setHasMounted] = useState(false)
 
   useEffect(() => {
-    setHasLoaded(true)
-  }, [hasLoaded])
+    setHasMounted(true)
+  }, [hasMounted])
 
   return (
     <Global styles={css`
+      :root {
+        --background: rgba(243, 243, 243, 1);
+        --title: rgba(15, 15, 15, 1);
+        --text: rgba(22, 22, 22, 1);
+        --about: rgba(255, 255, 255, 1);
+      }
+
+      [data-theme='dark'] {
+        --background: rgba(35, 35, 35, 1);
+        --title: rgba(250, 250, 250, 1);
+        --text: rgba(243, 243, 243, 1);
+        --about: rgba(54, 54, 54, 1);
+      }
+      
       * {
         box-sizing: border-box;
         padding: 0;
@@ -22,20 +34,21 @@ const GlobalStyles = () => {
       body {
         max-width: 100vw;
         overflow-x: hidden;
+        
       }
 
       body {
-        color: ${theme.colors.text};
-        background: ${theme.colors.background};
+        color: var(--text);
+        background: var(--background);
 
-        ${hasLoaded && css`
+        ${hasMounted && css`
           transition-property: background, color;
           transition-duration: 1s;
           transition-timing-function: ease;
         `};
 
         * {
-          ${hasLoaded && css`
+          ${hasMounted && css`
             transition-property: background, background-color;
             transition-duration: 1s;
             transition-timing-function: ease;
