@@ -6,22 +6,25 @@ import { ThemeProvider } from '@emotion/react'
 import { ReactNode, useState } from 'react'
 
 const AppWrapper = ({ children }: { children: ReactNode }) => {
-  const prefersDark = typeof window !== 'undefined'
-    ? window.matchMedia('(prefers-color-scheme: dark)').matches
-    : false
+  const [userTheme, setUserTheme] = useState('dark')
 
-  const [usingDarkTheme, setUsingDarkTheme] = useState(localStorage.getItem('@rd.dev-darktheme') === 'true' ?? prefersDark)
+  const themes = {
+    'light': lightTheme,
+    'dark': darkTheme
+  }
 
   const toggleTheme = () => {
-    setUsingDarkTheme((prevState) => {
-      localStorage.setItem('@rd.dev-darktheme', (!prevState).toString())
-      return !prevState
+    setUserTheme((prevState) => {
+      const keys = Object.keys(themes)
+      const nextIndex = keys.indexOf(prevState) + 1 >= keys.length ? 0 : keys.indexOf(prevState) + 1
+      localStorage.setItem('@rd.dev-theme', keys[nextIndex])
+      return keys[nextIndex]
     })
   }
 
   return (
-    <ThemeContext.Provider value={{ usingDarkTheme, toggleTheme }}>
-      <ThemeProvider theme={usingDarkTheme ? darkTheme : lightTheme}>
+    <ThemeContext.Provider value={{ userTheme, toggleTheme }}>
+      <ThemeProvider theme={themes[userTheme as keyof typeof themes]}>
         <GlobalStyles />
         {children}
       </ThemeProvider>

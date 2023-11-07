@@ -15,7 +15,7 @@ export const ToggleButton = styled.div`
 `
 
 interface IconFlipperProps {
-  side?: boolean
+  isDark?: boolean
 }
 
 export const IconFlipper = styled.div<IconFlipperProps>`
@@ -26,7 +26,7 @@ export const IconFlipper = styled.div<IconFlipperProps>`
   transform-style: preserve-3d;
   --webkit-transform-style: preserve-3d;
 
-  transform: ${({ side }) => side ? '0' : 'rotateY(180deg)'};
+  transform: ${({ isDark }) => isDark ? '0' : 'rotateY(180deg)'};
   transition: transform 1s ease;
   animation-duration: 1s;
 `
