@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction } from 'react'
 import { AboutButton, LinkDiv, LinksWrapper } from '@/library/Links/styles'
 import { CustomLink } from '@/library/CustomLink'
+import { Dispatch, SetStateAction } from 'react'
 import { Divider } from '@/library/Divider'
 import { useTranslations } from 'next-intl'
 

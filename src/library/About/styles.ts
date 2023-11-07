@@ -19,7 +19,7 @@ export const AboutWrapper = styled.div<AboutWrapperProps>`
   margin: 1rem 0 1.25rem;
   padding: 2rem;
   
-  background-color: ${({ theme }) => theme.colors.about};
+  background-color: var(--about);
 
   overflow: hidden;
   

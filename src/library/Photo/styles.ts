@@ -10,7 +10,7 @@ export const PhotoWrapper = styled.div`
   
   border-radius: 5.5rem;
 
-  background-color: ${({ theme }) => theme.colors.about};
+  background-color: var(--about);
 `
 
 export const RoundPhoto = styled(Image)`

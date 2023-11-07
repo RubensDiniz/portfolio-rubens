@@ -15,7 +15,7 @@ export const ToggleButton = styled.div`
 `
 
 interface IconFlipperProps {
-  isDark?: boolean
+  currentTheme?: string
 }
 
 export const IconFlipper = styled.div<IconFlipperProps>`
@@ -26,9 +26,13 @@ export const IconFlipper = styled.div<IconFlipperProps>`
   transform-style: preserve-3d;
   --webkit-transform-style: preserve-3d;
 
-  transform: ${({ isDark }) => isDark ? '0' : 'rotateY(180deg)'};
+  transform: ${({ currentTheme }) => currentTheme === 'dark' ? '0' : 'rotateY(180deg)'};
   transition: transform 1s ease;
-  animation-duration: 1s;
+
+  > img {
+    opacity: ${({ currentTheme }) => currentTheme ? 1 : 0};
+    transition: opacity 1s ease-in;
+  }
 `
 
 export const ButtonIcon = styled(Image)`
@@ -38,7 +42,7 @@ export const ButtonIcon = styled(Image)`
   width: 1.5rem;
 
   user-select: none;
-  
+
   backface-visibility: hidden;
   --webkit-backface-visibility: hidden;
 `

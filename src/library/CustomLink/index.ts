@@ -5,13 +5,12 @@ export const CustomLink = styled(Link)`
   font-weight: 400;
 
   padding-bottom: 3px;
-
-  transition-property: background-size;
-  transition: background-size 300ms;
+  
+  transition: background-size 300ms ease;
 
   background-position: bottom left;
   background-size: 0 2px;
-  background-image: linear-gradient(${({ theme }) => theme.colors.text}, ${({ theme }) => theme.colors.text});
+  background-image: linear-gradient(var(--text), var(--text));
   background-repeat: no-repeat;
 
   &:hover {
