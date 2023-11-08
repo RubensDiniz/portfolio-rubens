@@ -1,4 +1,5 @@
 import { CustomLink } from '@/library/CustomLink'
+import { SmallScreen } from '@/library/Sizes'
 import styled from '@emotion/styled'
 
 export const HomeWrapper = styled.div`
@@ -9,6 +10,11 @@ export const HomeWrapper = styled.div`
   height: 100vh;
 
   padding-top: 8rem;
+  transition: padding 1s ease;
+  
+  ${SmallScreen} {
+    padding: 3.5rem 1.5rem 0;
+  }
 `
 
 export const Header = styled.div`
