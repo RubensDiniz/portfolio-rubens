@@ -1,36 +1,20 @@
-import { css } from '@emotion/react'
+import AnimateHeight from 'react-animate-height'
 import styled from '@emotion/styled'
 
-interface AboutWrapperProps {
-  aboutIsOpen: boolean
-}
-
-export const AboutWrapper = styled.div<AboutWrapperProps>`
-  display: flex;
+export const AboutWrapper = styled(AnimateHeight)`
   flex-shrink: 0;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-height: 352px;
   max-width: 22rem;
-  
-  border-radius: 1rem;
-  
-  margin: 1rem 0 1.25rem;
-  padding: 2rem;
-  
-  background-color: var(--about);
 
-  overflow: hidden;
-  
-  transition-timing-function: ease;
-  transition: padding 0.8s, margin 1s, max-height 0.8s, background-color 1s;
-  
-  ${({ aboutIsOpen }) => !aboutIsOpen && css`
-    max-height: 0;
-    padding: 0 2rem;
-    margin: 0;
-  `};
+  border-radius: 1rem;
+
+  background-color: var(--about);
+`
+
+export const AboutInner = styled.div`
+  padding: 2rem;
 `
 
 export const AboutText = styled.div`

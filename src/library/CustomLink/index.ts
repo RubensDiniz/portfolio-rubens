@@ -13,7 +13,7 @@ export const CustomLink = styled(Link)`
   background-image: linear-gradient(var(--text), var(--text));  
   background-repeat: no-repeat;
 
-  &:hover, &:focus {
+  &:hover {
     background-size: 100% 2px;
     font-weight: 600;
   }
