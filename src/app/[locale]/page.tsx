@@ -18,7 +18,7 @@ const Home = () => {
       <Header>
         <span>Rubens Diniz</span>
         <p>
-          {t('position')} @ <CompanyLink href={'https://app.starlight.sh/auth/login'}
+          {t('position')} @ <CompanyLink href={'https://www.starlight.sh/'}
                                          target="_blank">Starlight</CompanyLink>
         </p>
       </Header>
