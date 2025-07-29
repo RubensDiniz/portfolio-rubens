@@ -2,15 +2,20 @@ import { SmallScreen } from '@/library/Sizes'
 import styled from '@emotion/styled'
 
 export const LocaleSwitcherWrapper = styled.div`
+  position: absolute;
+  bottom: 3rem;
   display: flex;
-  padding: 1.5rem 0 3rem;
-  
+  padding: 0 1rem;
+  border-radius: 1rem;
+    
   gap: 3px;
+    
+  background-color: var(--background);
 
-  transition: padding 1s ease;
+  transition: padding 1s ease, background-color 1s ease;
 
   ${SmallScreen} {
-    padding-bottom: 2rem;
+    bottom: 2rem;
   }
 `
 
