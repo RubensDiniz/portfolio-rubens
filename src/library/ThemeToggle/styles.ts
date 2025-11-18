@@ -6,6 +6,8 @@ export const ToggleButton = styled.div`
   align-items: center;
   justify-content: center;
 
+  background-color: var(--about);
+
   width: 3rem;
   height: 3rem;
 
@@ -26,11 +28,11 @@ export const IconFlipper = styled.div<IconFlipperProps>`
   transform-style: preserve-3d;
   --webkit-transform-style: preserve-3d;
 
-  transform: ${({ currentTheme }) => currentTheme === 'dark' ? '0' : 'rotateY(180deg)'};
+  transform: ${({ currentTheme }) => (currentTheme === 'dark' ? '0' : 'rotateY(180deg)')};
   transition: transform 1s ease;
 
   > img {
-    opacity: ${({ currentTheme }) => currentTheme ? 1 : 0};
+    opacity: ${({ currentTheme }) => (currentTheme ? 1 : 0)};
     transition: opacity 1s ease-in;
   }
 `
