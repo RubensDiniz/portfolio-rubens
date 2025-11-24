@@ -1,6 +1,6 @@
-import { AboutButton, LinkDiv, LinksWrapper } from '@/library/Links/styles'
+import { Dispatch, SetStateAction, useEffect, useRef } from 'react'
+import { AboutButton, LinkDiv, LinksWrapper } from './styles'
 import { CustomLink } from '@/library/CustomLink'
-import { Dispatch, SetStateAction } from 'react'
 import { Divider } from '@/library/Divider'
 import { useTranslations } from 'next-intl'
 
@@ -10,21 +10,26 @@ type LinksProps = {
 }
 
 export const Links = ({ aboutIsOpen, setAboutIsOpen }: LinksProps) => {
+  const aboutRef = useRef<HTMLAnchorElement>(null)
   const t = useTranslations('Home')
+
+  useEffect(() => {
+    if (!aboutIsOpen) aboutRef.current?.blur()
+  }, [aboutIsOpen])
 
   const linkArray = [
     {
       url: 'https://www.linkedin.com/in/rubensadiniz/',
-      label: 'Linkedin'
+      label: 'Linkedin',
     },
     {
       url: 'mailto:rubensadiniz@gmail.com',
-      label: 'Email'
+      label: 'Email',
     },
     {
       url: 'https://github.com/RubensDiniz',
-      label: 'GitHub'
-    }
+      label: 'GitHub',
+    },
   ]
 
   return (
@@ -41,6 +46,7 @@ export const Links = ({ aboutIsOpen, setAboutIsOpen }: LinksProps) => {
         href={'/'}
         onClick={() => setAboutIsOpen(!aboutIsOpen)}
         aboutIsOpen={aboutIsOpen}
+        ref={aboutRef}
       >
         {t('about.button')}
       </AboutButton>

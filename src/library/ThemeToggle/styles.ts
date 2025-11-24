@@ -28,12 +28,13 @@ export const IconFlipper = styled.div<IconFlipperProps>`
   transform-style: preserve-3d;
   --webkit-transform-style: preserve-3d;
 
-  transform: ${({ currentTheme }) => (currentTheme === 'dark' ? '0' : 'rotateY(180deg)')};
-  transition: transform 1s ease;
+  transform: ${({ currentTheme }) =>
+    currentTheme ? (currentTheme === 'dark' ? '0' : 'rotateY(180deg)') : 'rotateY(90deg)'};
+  transition: ${({ currentTheme }) => (currentTheme ? 'transform 1s ease' : 'transform 0s ease')};
 
   > img {
     opacity: ${({ currentTheme }) => (currentTheme ? 1 : 0)};
-    transition: opacity 1s ease-in;
+    transition: ${({ currentTheme }) => (currentTheme ? 'opacity 1s ease' : 'opacity 0s ease')};
   }
 `
 

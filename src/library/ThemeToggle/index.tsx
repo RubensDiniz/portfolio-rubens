@@ -8,23 +8,8 @@ import sun from '$/public/sun.svg'
 export const ThemeToggle = () => {
   const { theme, setTheme, systemTheme } = useTheme()
   const [currentTheme, setCurrentTheme] = useState<string | undefined>(undefined)
-  const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    setMounted(true)
-    setCurrentTheme(theme !== 'system' ? theme : systemTheme)
-  }, [theme, systemTheme])
-
-  if (!mounted) {
-    return (
-      <ToggleButton>
-        <IconFlipper currentTheme="dark">
-          <SunIcon src={sun} alt={'☀️'} />
-          <MoonIcon src={moon} alt={'🌙'} />
-        </IconFlipper>
-      </ToggleButton>
-    )
-  }
+  useEffect(() => setCurrentTheme(theme !== 'system' ? theme : systemTheme), [theme, systemTheme])
 
   return (
     <ToggleButton onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}>

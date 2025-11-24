@@ -6,8 +6,6 @@ export const LinksWrapper = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  
-  margin-bottom: auto;
 `
 
 export const LinkDiv = styled.div`
@@ -20,10 +18,10 @@ interface AboutButtonProps {
 }
 
 export const AboutButton = styled(CustomLink, {
-  shouldForwardProp: prop => isPropValid(prop) && prop !== 'aboutIsOpen'
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'aboutIsOpen',
 })<AboutButtonProps>`
   cursor: pointer;
 
-  font-weight: ${({ aboutIsOpen }) => aboutIsOpen ? 600 : 400};
-  background-size: ${({ aboutIsOpen }) => aboutIsOpen ? '100% 2px' : '0 2px'};
+  font-weight: ${({ aboutIsOpen }) => (aboutIsOpen ? 600 : 400)};
+  background-size: ${({ aboutIsOpen }) => (aboutIsOpen ? '100% 2px' : '0 2px')};
 `

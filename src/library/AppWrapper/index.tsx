@@ -1,5 +1,5 @@
 'use client'
-import GlobalStyles from '@/library/AppWrapper/GlobalStyles'
+import GlobalStyles from './GlobalStyles'
 import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
 

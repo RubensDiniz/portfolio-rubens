@@ -6,6 +6,9 @@ export const LocaleDiv = styled.div`
 `
 
 export const LocaleSwitcherWrapper = styled.div`
+  position: fixed;
+  bottom: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +27,7 @@ export const MobileLocaleSwitcher = styled.div`
   ${SmallScreen} {
     display: flex;
     overflow: hidden;
+    padding: 2.25rem;
 
     background-color: var(--about);
     transition:
@@ -33,8 +37,9 @@ export const MobileLocaleSwitcher = styled.div`
     position: absolute;
     bottom: 2rem;
     right: 2rem;
-    padding: 2.25rem;
+
     border-radius: 50%;
+    border: solid 2px var(--background);
 
     > ${LocaleDiv} {
       position: absolute;
