@@ -12,8 +12,11 @@ export const ThemeToggle = () => {
   useEffect(() => setCurrentTheme(theme !== 'system' ? theme : systemTheme), [theme, systemTheme])
 
   return (
-    <ToggleButton onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}>
-      <IconFlipper currentTheme={currentTheme}>
+    <ToggleButton
+      currentTheme={currentTheme}
+      onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}
+    >
+      <IconFlipper>
         <SunIcon src={sun} alt={'☀️'} />
         <MoonIcon src={moon} alt={'🌙'} />
       </IconFlipper>

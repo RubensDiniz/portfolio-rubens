@@ -1,7 +1,20 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
 
-export const ToggleButton = styled.div`
+export const IconFlipper = styled.div`
+  position: relative;
+  height: 1.5rem;
+  width: 1.5rem;
+
+  transform-style: preserve-3d;
+  --webkit-transform-style: preserve-3d;
+`
+
+interface ToggleButtonProps {
+  currentTheme?: string
+}
+
+export const ToggleButton = styled.div<ToggleButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,27 +27,16 @@ export const ToggleButton = styled.div`
   border-radius: 50%;
 
   cursor: pointer;
-`
 
-interface IconFlipperProps {
-  currentTheme?: string
-}
+  opacity: ${({ currentTheme }) => (currentTheme ? 1 : 0)};
+  transition:
+    opacity 1s ease,
+    background-color 1s ease;
 
-export const IconFlipper = styled.div<IconFlipperProps>`
-  position: relative;
-  height: 1.5rem;
-  width: 1.5rem;
-
-  transform-style: preserve-3d;
-  --webkit-transform-style: preserve-3d;
-
-  transform: ${({ currentTheme }) =>
-    currentTheme ? (currentTheme === 'dark' ? '0' : 'rotateY(180deg)') : 'rotateY(90deg)'};
-  transition: ${({ currentTheme }) => (currentTheme ? 'transform 1s ease' : 'transform 0s ease')};
-
-  > img {
-    opacity: ${({ currentTheme }) => (currentTheme ? 1 : 0)};
-    transition: ${({ currentTheme }) => (currentTheme ? 'opacity 1s ease' : 'opacity 0s ease')};
+  > ${IconFlipper} {
+    transform: ${({ currentTheme }) =>
+      currentTheme ? (currentTheme === 'dark' ? '0' : 'rotateY(180deg)') : 'rotateY(90deg)'};
+    transition: ${({ currentTheme }) => (currentTheme ? 'transform 1s ease' : 'transform 0s ease')};
   }
 `
 

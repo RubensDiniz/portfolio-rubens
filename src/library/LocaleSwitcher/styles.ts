@@ -3,6 +3,11 @@ import styled from '@emotion/styled'
 
 export const LocaleDiv = styled.div`
   display: flex;
+
+  > a {
+    display: flex;
+    align-items: center;
+  }
 `
 
 export const LocaleSwitcherWrapper = styled.div`
@@ -36,7 +41,7 @@ export const MobileLocaleSwitcher = styled.div`
 
     position: absolute;
     bottom: 2rem;
-    right: 2rem;
+    left: 2rem;
 
     border-radius: 50%;
     border: solid 2px var(--background);

@@ -1,4 +1,4 @@
-import { CustomLink } from '@/library/CustomLink'
+import { BasePageItem, PageItemLink } from '../PageItem'
 import isPropValid from '@emotion/is-prop-valid'
 import styled from '@emotion/styled'
 
@@ -17,9 +17,11 @@ interface AboutButtonProps {
   aboutIsOpen?: boolean
 }
 
-export const AboutButton = styled(CustomLink, {
+export const AboutButton = styled('div', {
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'aboutIsOpen',
 })<AboutButtonProps>`
+  ${BasePageItem};
+
   cursor: pointer;
 
   font-weight: ${({ aboutIsOpen }) => (aboutIsOpen ? 600 : 400)};

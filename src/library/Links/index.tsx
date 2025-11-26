@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react'
 import { AboutButton, LinkDiv, LinksWrapper } from './styles'
-import { CustomLink } from '@/library/CustomLink'
+import { PageItemLink } from '@/library/PageItem'
 import { Divider } from '@/library/Divider'
 import { useTranslations } from 'next-intl'
 
@@ -10,7 +10,7 @@ type LinksProps = {
 }
 
 export const Links = ({ aboutIsOpen, setAboutIsOpen }: LinksProps) => {
-  const aboutRef = useRef<HTMLAnchorElement>(null)
+  const aboutRef = useRef<HTMLDivElement>(null)
   const t = useTranslations('Home')
 
   useEffect(() => {
@@ -36,14 +36,13 @@ export const Links = ({ aboutIsOpen, setAboutIsOpen }: LinksProps) => {
     <LinksWrapper>
       {linkArray.map((link) => (
         <LinkDiv key={link.label}>
-          <CustomLink href={link.url} target="_blank">
+          <PageItemLink href={link.url} target="_blank">
             {link.label}
-          </CustomLink>
+          </PageItemLink>
           <Divider />
         </LinkDiv>
       ))}
       <AboutButton
-        href={'/'}
         onClick={() => setAboutIsOpen(!aboutIsOpen)}
         aboutIsOpen={aboutIsOpen}
         ref={aboutRef}
