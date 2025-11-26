@@ -23,12 +23,12 @@ export const Links = ({ aboutIsOpen, setAboutIsOpen }: LinksProps) => {
       label: 'Linkedin',
     },
     {
-      url: 'mailto:rubensadiniz@gmail.com',
-      label: 'Email',
-    },
-    {
       url: 'https://github.com/RubensDiniz',
       label: 'GitHub',
+    },
+    {
+      url: 'mailto:rubensadiniz@gmail.com',
+      label: 'Email',
     },
   ]
 
@@ -42,6 +42,12 @@ export const Links = ({ aboutIsOpen, setAboutIsOpen }: LinksProps) => {
           <Divider />
         </LinkDiv>
       ))}
+      <LinkDiv>
+        <PageItemLink href="/cv-rubens-diniz.pdf" download>
+          CV
+        </PageItemLink>
+        <Divider />
+      </LinkDiv>
       <AboutButton
         onClick={() => setAboutIsOpen(!aboutIsOpen)}
         aboutIsOpen={aboutIsOpen}

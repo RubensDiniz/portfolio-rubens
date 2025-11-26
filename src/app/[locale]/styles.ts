@@ -33,6 +33,10 @@ export const Header = styled.div`
   > p {
     font-size: 1.25rem;
     font-weight: 500;
+
+    ${SmallScreen} {
+      font-size: 1.2rem;
+    }
   }
 `
 

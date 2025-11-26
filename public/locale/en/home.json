@@ -1,11 +1,11 @@
 {
   "Home": {
-    "position": "Frontend Developer",
+    "position": "Front-end Developer",
     "at": "@",
     "about": {
       "button": "About",
       "texts": {
-        "1": "Hi! I’m Rubens, a <bold>frontend developer</bold> passionate about building outstanding software experiences, learning and honing my skills.",
+        "1": "Hi! I’m Rubens, a <bold>front-end developer</bold> passionate about building outstanding software experiences, learning and honing my skills.",
         "2": "I graduated in Computer Science at the end of 2021, and since then I have been working as a developer."
       },
       "languages": "\uD83C\uDF0E C1 English | Native Portuguese"
