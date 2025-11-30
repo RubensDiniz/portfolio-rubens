@@ -1,4 +1,4 @@
-import { AboutInner, AboutText, AboutTools, AboutWrapper } from '@/library/About/styles'
+import { AboutInner, AboutText, AboutTools, AboutWrapper } from './styles'
 import { Height } from 'react-animate-height'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
@@ -8,7 +8,6 @@ type AboutProps = {
 }
 
 export const About = ({ aboutIsOpen }: AboutProps) => {
-  const textKeys = ['1', '2']
   const t = useTranslations('Home')
   const [height, setHeight] = useState<Height>(0)
 
@@ -24,7 +23,7 @@ export const About = ({ aboutIsOpen }: AboutProps) => {
     <AboutWrapper
       height={height}
       duration={800}
-      easing='ease'
+      easing="ease"
       style={{
         transition: 'margin 1s, background-color 1s',
         margin: aboutIsOpen ? '1rem 0 1.25rem' : 0,
@@ -32,25 +31,18 @@ export const About = ({ aboutIsOpen }: AboutProps) => {
     >
       <AboutInner>
         <AboutText>
-          {textKeys.map((key) => (
+          {['1', '2'].map((key) => (
             <p key={key}>
               {t.rich(`about.texts.${key}`, {
-                bold: (chunks) => <strong>{chunks}</strong>
+                bold: (chunks) => <strong>{chunks}</strong>,
               })}
             </p>
           ))}
         </AboutText>
-
         <AboutTools>
-        <span>
-          🛠️ React.js | Next.js
-        </span>
-          <p>
-            🔨 Python | Node.js | Unity
-          </p>
-          <p>
-            {t('about.languages')}
-          </p>
+          <span>🛠️ React.js | Next.js</span>
+          <p>🔨 Python | Node.js | Unity</p>
+          <p>{t('about.languages')}</p>
         </AboutTools>
       </AboutInner>
     </AboutWrapper>
