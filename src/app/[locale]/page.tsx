@@ -2,7 +2,7 @@
 import { CompanyLink, Header, HomeWrapper } from './styles'
 import { LocaleSwitcher } from '@/library/LocaleSwitcher'
 import { useTranslations } from 'next-intl'
-import { Photo } from '@/library/Photo'
+import { PhotoAndTheme } from '@/library/PhotoAndTheme'
 import { About } from '@/library/About'
 import { Links } from '@/library/Links'
 import { useState } from 'react'
@@ -13,13 +13,18 @@ const Home = () => {
 
   return (
     <HomeWrapper>
-      <Photo />
+      <PhotoAndTheme />
 
       <Header>
         <span>Rubens Diniz</span>
         <p>
-          {t('position')} @ <CompanyLink href={'https://www.starlight.sh/'}
-                                         target="_blank">Starlight</CompanyLink>
+          {t('position')}{' '}
+          <span>
+            {t('at')}{' '}
+            <CompanyLink href={'https://www.starlight.sh/'} target="_blank">
+              Starlight
+            </CompanyLink>
+          </span>
         </p>
       </Header>
 
