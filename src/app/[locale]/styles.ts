@@ -1,4 +1,4 @@
-import { PageItemLink } from '../../library/PageItem'
+import { PageItemLink } from '@/library/PageItem'
 import { SmallScreen } from '@/library/Sizes'
 import styled from '@emotion/styled'
 
@@ -33,6 +33,10 @@ export const Header = styled.div`
   > p {
     font-size: 1.25rem;
     font-weight: 500;
+
+    > span {
+      white-space: nowrap;
+    }
 
     ${SmallScreen} {
       font-size: 1.2rem;
