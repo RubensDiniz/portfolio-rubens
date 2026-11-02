@@ -21,8 +21,8 @@ const Home = () => {
           {t('position')}{' '}
           <span>
             {t('at')}{' '}
-            <CompanyLink href={'https://www.starlight.sh/'} target="_blank">
-              Starlight
+            <CompanyLink href={'https://www.rate.com/'} target="_blank">
+              Rate
             </CompanyLink>
           </span>
         </p>
