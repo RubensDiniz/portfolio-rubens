@@ -1,12 +1,16 @@
 import styled from '@emotion/styled'
-import Link from 'next/link'
 import { css } from '@emotion/react'
 
 export const BasePageItem = css`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
   font-weight: 400;
 
-  /* This padding (and the hover padding) compensate the difference in font weight */
-  padding: 0 0.06rem 0.214rem 0.06rem;
+  /* The underline sits at the bottom of the box, so it can't inherit a taller line-height */
+  line-height: normal;
+  padding-bottom: 0.214rem;
 
   transition: background-size 300ms ease;
 
@@ -15,14 +19,23 @@ export const BasePageItem = css`
   background-image: linear-gradient(var(--text), var(--text));
   background-repeat: no-repeat;
 
+  /* An invisible bold copy of the text (from data-text) keeps the item at its bold width at all
+  times, so that the change in font weight doesn't shift the text around it */
+  &::after {
+    content: attr(data-text);
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    font-weight: 600;
+  }
+
   &:hover,
-  &:focus {
-    padding: 0 0 0.214rem 0;
+  &:focus-visible {
     background-size: 100% 0.143rem;
     font-weight: 600;
   }
 `
 
-export const PageItemLink = styled(Link)`
+export const PageItemLink = styled.a`
   ${BasePageItem}
 `

@@ -4,7 +4,7 @@ import profilepic from '$/public/profilepic.png'
 
 export const PhotoAndTheme = () => (
   <PhotoWrapper>
-    <RoundPhoto src={profilepic} alt={'Rubens Diniz'} />
+    <RoundPhoto src={profilepic} alt={'Rubens Diniz'} width={160} height={160} priority />
     <ToggleWrapper>
       <ThemeToggle />
     </ToggleWrapper>

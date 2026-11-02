@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction, useEffect, useRef } from 'react'
 import { AboutButton, LinkDiv, LinksWrapper } from './styles'
 import { PageItemLink } from '@/library/PageItem'
+import { Dispatch, SetStateAction } from 'react'
 import { Divider } from '@/library/Divider'
 import { useTranslations } from 'next-intl'
 
@@ -10,21 +10,18 @@ type LinksProps = {
 }
 
 export const Links = ({ aboutIsOpen, setAboutIsOpen }: LinksProps) => {
-  const aboutRef = useRef<HTMLDivElement>(null)
   const t = useTranslations('Home')
-
-  useEffect(() => {
-    if (!aboutIsOpen) aboutRef.current?.blur()
-  }, [aboutIsOpen])
 
   const linkArray = [
     {
       url: 'https://www.linkedin.com/in/rubensadiniz/',
       label: 'Linkedin',
+      target: '_blank',
     },
     {
       url: 'https://github.com/RubensDiniz',
       label: 'GitHub',
+      target: '_blank',
     },
     {
       url: 'mailto:rubensadiniz@gmail.com',
@@ -36,22 +33,24 @@ export const Links = ({ aboutIsOpen, setAboutIsOpen }: LinksProps) => {
     <LinksWrapper>
       {linkArray.map((link) => (
         <LinkDiv key={link.label}>
-          <PageItemLink href={link.url} target="_blank">
+          <PageItemLink href={link.url} target={link.target} data-text={link.label}>
             {link.label}
           </PageItemLink>
           <Divider />
         </LinkDiv>
       ))}
       <LinkDiv>
-        <PageItemLink href="/cv-rubens-diniz.pdf" download>
+        <PageItemLink href="/cv-rubens-diniz.pdf" download data-text="CV">
           CV
         </PageItemLink>
         <Divider />
       </LinkDiv>
       <AboutButton
+        type="button"
         onClick={() => setAboutIsOpen(!aboutIsOpen)}
         aboutIsOpen={aboutIsOpen}
-        ref={aboutRef}
+        aria-expanded={aboutIsOpen}
+        data-text={t('about.button')}
       >
         {t('about.button')}
       </AboutButton>

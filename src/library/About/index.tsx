@@ -1,7 +1,5 @@
 import { AboutInner, AboutText, AboutTools, AboutWrapper } from './styles'
-import { Height } from 'react-animate-height'
 import { useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
 
 type AboutProps = {
   aboutIsOpen: boolean
@@ -9,19 +7,13 @@ type AboutProps = {
 
 export const About = ({ aboutIsOpen }: AboutProps) => {
   const t = useTranslations('Home')
-  const [height, setHeight] = useState<Height>(0)
-
-  useEffect(() => {
-    setHeight(aboutIsOpen ? 'auto' : 0)
-  }, [aboutIsOpen])
 
   // A custom library was used because the height transition in CSS (for
-  // anything other than a set value) does not work properly. This
-  // implementation is present in this component's height state, its useEffect
-  // and in AboutWrapper below (which is a styled AnimateHeight from the lib).
+  // anything other than a set value) does not work properly. AboutWrapper
+  // below is a styled AnimateHeight from the lib.
   return (
     <AboutWrapper
-      height={height}
+      height={aboutIsOpen ? 'auto' : 0}
       duration={800}
       easing="ease"
       style={{
@@ -40,8 +32,8 @@ export const About = ({ aboutIsOpen }: AboutProps) => {
           ))}
         </AboutText>
         <AboutTools>
-          <span>🛠️ React.js | Next.js</span>
-          <p>🔨 Python | Node.js | Unity</p>
+          <span>🛠️ React.js | Next.js | TypeScript</span>
+          <p>🔨 Node.js | React Native | Unity</p>
           <p>{t('about.languages')}</p>
         </AboutTools>
       </AboutInner>

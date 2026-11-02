@@ -1,13 +1,16 @@
 'use client'
+import EmotionRegistry from './EmotionRegistry'
 import GlobalStyles from './GlobalStyles'
 import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
 
 const AppWrapper = ({ children }: { children: ReactNode }) => (
-  <ThemeProvider>
-    <GlobalStyles />
-    {children}
-  </ThemeProvider>
+  <EmotionRegistry>
+    <ThemeProvider>
+      <GlobalStyles />
+      {children}
+    </ThemeProvider>
+  </EmotionRegistry>
 )
 
 export default AppWrapper

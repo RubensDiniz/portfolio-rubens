@@ -1,18 +1,20 @@
+import { DividerWrapper } from '@/library/Divider/styles'
 import { SmallScreen } from '@/library/Sizes'
 import styled from '@emotion/styled'
 
 export const LocaleDiv = styled.div`
   display: flex;
+  align-items: center;
 
   > a {
     display: flex;
     align-items: center;
+    filter: grayscale(100%);
   }
 `
 
 export const LocaleSwitcherWrapper = styled.div`
-  position: fixed;
-  bottom: 0;
+  margin-top: auto;
 
   display: flex;
   align-items: center;
@@ -22,29 +24,37 @@ export const LocaleSwitcherWrapper = styled.div`
   gap: 0.214rem;
 
   ${SmallScreen} {
-    display: none;
-  }
-`
-
-export const MobileLocaleSwitcher = styled.div`
-  display: none;
-
-  ${SmallScreen} {
-    display: flex;
-    overflow: hidden;
-    padding: 2.25rem;
-
-    background-color: var(--about);
-    transition:
-      background-color 1s,
-      border-color 1s;
-
-    position: absolute;
+    position: fixed;
     bottom: 2rem;
     left: 2rem;
+    z-index: 3;
+
+    margin: 0;
+
+    overflow: hidden;
+    padding: calc(2.25rem + 2px);
+    gap: 0;
 
     border-radius: 50%;
-    border: solid 2px var(--background);
+
+    /* A pseudo-element only exists here, so the circle doesn't fade when crossing the breakpoint */
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+
+      background-color: var(--about);
+      transition:
+        background-color 1s,
+        border-color 1s;
+
+      border-radius: 50%;
+      border: solid 2px var(--background);
+    }
+
+    ${DividerWrapper} {
+      display: none;
+    }
 
     > ${LocaleDiv} {
       position: absolute;
