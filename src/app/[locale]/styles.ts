@@ -7,7 +7,8 @@ export const HomeWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
 
   padding-top: 8rem;
   transition: padding 1s ease;
@@ -19,8 +20,6 @@ export const HomeWrapper = styled.div`
 
 export const Header = styled.div`
   padding: 1.25rem 0 0.75rem;
-
-  gap: 0.5rem;
 
   text-align: center;
   line-height: 2.25rem;

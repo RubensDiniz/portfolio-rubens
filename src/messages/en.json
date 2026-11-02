@@ -1,0 +1,24 @@
+{
+  "Metadata": {
+    "description": "Portfolio of Rubens Diniz, a front-end software engineer."
+  },
+  "Home": {
+    "position": "Front-end Software Engineer",
+    "at": "@",
+    "about": {
+      "button": "About",
+      "texts": {
+        "1": "Hi! I’m Rubens, a <bold>front-end engineer</bold> with 5+ years building web apps for fintech and SaaS.",
+        "2": "Based in Brazil, working remotely with US teams."
+      },
+      "languages": "🌎 C1 English | Native Portuguese"
+    },
+    "theme": {
+      "light": "Switch to light theme",
+      "dark": "Switch to dark theme"
+    },
+    "current_language": "Current language: English",
+    "br_flag": "Switch to Portuguese",
+    "us_flag": "Switch to English"
+  }
+}

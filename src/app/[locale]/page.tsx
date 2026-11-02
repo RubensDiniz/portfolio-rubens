@@ -21,7 +21,7 @@ const Home = () => {
           {t('position')}{' '}
           <span>
             {t('at')}{' '}
-            <CompanyLink href={'https://www.rate.com/'} target="_blank">
+            <CompanyLink href={'https://www.rate.com/'} target="_blank" data-text="Rate">
               Rate
             </CompanyLink>
           </span>

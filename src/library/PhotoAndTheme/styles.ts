@@ -4,10 +4,10 @@ import Image from 'next/image'
 export const PhotoWrapper = styled.div`
   flex-shrink: 0;
   position: relative;
-  
+
   height: 11rem;
   width: 11rem;
-  
+
   border-radius: 5.5rem;
 
   background-color: var(--about);
@@ -22,7 +22,7 @@ export const RoundPhoto = styled(Image)`
   width: 10rem;
 
   border-radius: 50%;
-  
+
   user-select: none;
 `
 

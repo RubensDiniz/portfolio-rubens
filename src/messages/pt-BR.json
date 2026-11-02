@@ -1,0 +1,24 @@
+{
+  "Metadata": {
+    "description": "Portfólio de Rubens Diniz, engenheiro de software front-end."
+  },
+  "Home": {
+    "position": "Engenheiro de Software Front-end",
+    "at": "em",
+    "about": {
+      "button": "Sobre",
+      "texts": {
+        "1": "Olá! Sou o Rubens, um <bold>engenheiro front-end</bold> com mais de 5 anos criando aplicações web para fintech e SaaS.",
+        "2": "Moro no Brasil e trabalho remotamente com times dos EUA."
+      },
+      "languages": "🌎 Inglês C1 | Português Nativo"
+    },
+    "theme": {
+      "light": "Mudar para o tema claro",
+      "dark": "Mudar para o tema escuro"
+    },
+    "current_language": "Idioma atual: português",
+    "br_flag": "Trocar para português",
+    "us_flag": "Trocar para inglês"
+  }
+}
